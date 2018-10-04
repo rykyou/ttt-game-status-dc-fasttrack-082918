@@ -47,3 +47,17 @@ def over?(board)
     true 
   end
 end
+
+def winner(board) 
+  WIN_COMBINATIONS.each do |win_combonation|
+    first_index = win_combonation[0]
+    second_index = win_combonation[1]
+    third_index = win_combonation[2]
+      
+    if board[first_index] == "X" && board[second_index] == "X" && board[third_index] == "X"
+      return "X"
+    elsif board[first_index] == "O" && board[second_index] == "O" && board[third_index] == "O"
+      return "O"
+    end 
+  end 
+end 
